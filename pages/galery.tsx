@@ -12,7 +12,6 @@ import Pagination from "../components/Pagination";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { GetStaticProps } from "next";
 import fetch from "isomorphic-unfetch";
-// import data from "../components/utils/photos.json";
 
 type GalleryProps = { scrollPosition?: any; getInitialProps: any; data: any };
 export interface Photos {
@@ -26,23 +25,12 @@ const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
 	const [photos, setPhotos] = useState<Photos[] | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [photosPerPage, setPhotosPerPage] = useState(10);
+	const [photosPerPage] = useState(10);
 
 	useEffect(
 		() => {
 			setPhotos(data);
 			setLoading(false);
-
-			// const fetchPhotos = async () => {
-			// 	setLoading(true);
-			// 	const res = await fetch("/api/photos");
-			// 	const data = await res.json();
-			// 	await console.log(data);
-			// 	setPhotos(data);
-			// 	setLoading(false);
-			// };
-
-			// fetchPhotos();
 		},
 		[photos]
 	);
@@ -66,7 +54,6 @@ const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
 			div!.scrollTop = 0;
 		}
 	};
-	console.log(photos, currentPhotos);
 	return (
 		<Layout>
 			<Shutter />
@@ -88,7 +75,7 @@ const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
 								: null}
 
 							<div className="pagination">
-								{/* {!loading ? <Pagination cardsPerPage={photosPerPage} totalCards={photos!.length} paginate={paginate} /> : null} */}
+								{!loading ? <Pagination cardsPerPage={photosPerPage} totalCards={photos!.length} paginate={paginate} /> : null}
 							</div>
 						</div>
 					</div>
