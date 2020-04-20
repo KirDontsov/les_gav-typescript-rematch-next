@@ -1,0 +1,26 @@
+@import "App.scss";
+@import "Nav.scss";
+@import "Footer.scss";
+@import "../node_modules/react-lazy-load-image-component/src/effects/blur.css";
+@import "Burger.scss";
+@import "Fonts.scss";
+@import "CallBack.scss";
+@import "Form.scss";
+@import "Pagination.scss";
+@import "Shutter.scss";
+@import "Slider.scss";
+@import "Vars.scss";
+
+// components
+@import "./components/Arrow.scss";
+
+// pages
+@import "./pages/Galery.scss";
+
+//sections
+@import "./sections/FirstSection.scss";
+@import "./sections/SecondSection.scss";
+@import "./sections/ThirdSection.scss";
+@import "./sections/FourthSection.scss";
+@import "./sections/FifthSection.scss";
+@import "./sections/SixthSection.scss";

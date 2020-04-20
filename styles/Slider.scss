@@ -1,0 +1,332 @@
+// =========================
+// Global
+// =========================
+@import "Vars.scss";
+
+:root {
+  --color-primary: #6b7a8f;
+  --color-secondary: #101118;
+  --color-accent: #1d1f2f;
+  --color-focus: #f4f4f4;
+  --base-duration: 600ms;
+  --base-ease: cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+
+.visuallyhidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// =========================
+// Icons
+// =========================
+
+.icon {
+  fill: var(--color-primary);
+  width: 100%;
+}
+
+// =========================
+// Buttons
+// =========================
+
+.btn {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem 2.5rem 1.125rem;
+
+  &:focus {
+    outline-color: var(--color-focus);
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 3px;
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.8);
+  }
+}
+
+// =========================
+// Slider controls
+// =========================
+
+.slider__controls {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+}
+
+.btn {
+  --size: 56px;
+
+  align-items: center;
+  background-color: transparent;
+
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  height: var(--size);
+  padding: 0;
+  width: var(--size);
+
+  &:focus {
+    outline: none;
+  }
+
+  &--next > * {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    border-color: var(--color-focus);
+  }
+}
+.btn--previous {
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  border: 1px solid $black;
+  &:hover {
+    border-color: $black;
+    background-color: $black;
+    svg path {
+      stroke: #fff;
+    }
+  }
+  svg path {
+    transition: 0.3s;
+    stroke: $black;
+  }
+}
+
+.btn--next {
+  position: absolute;
+  top: 50%;
+  left: 105%;
+  transform: translateY(-50%);
+  border: 1px solid $black;
+  @media (max-width: 1440px) {
+    left: 112.5%;
+    @media (max-width: 1024px) {
+      left: 115%;
+    }
+  }
+  &:hover {
+    border-color: $black;
+    background-color: $black;
+    svg path {
+      stroke: #fff;
+    }
+  }
+  svg path {
+    transition: 0.3s;
+    stroke: $black;
+  }
+}
+
+// =========================
+// Slider
+// =========================
+
+.slider {
+  --slide-width: 75vmin;
+  --slide-height: 50vmin;
+
+  --slide-margin: 2vmin;
+
+  width: var(--slide-width);
+  height: var(--slide-height);
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0 0 100px 0;
+    height: 86vmin;
+    width: 86vmin;
+  }
+}
+
+.slider__wrapper {
+  display: flex;
+  margin: 0 calc(var(--slide-margin) * -1);
+  position: absolute;
+  transition: transform var(--base-duration) cubic-bezier(0.25, 1, 0.35, 1);
+}
+
+// =========================
+// Slide
+// =========================
+
+.slide {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: var(--slide-width);
+  height: var(--slide-height);
+  justify-content: center;
+  margin: 0 50px;
+  opacity: 0.25;
+  position: relative;
+  text-align: center;
+  transition: opacity calc(var(--base-duration) / 2) var(--base-ease),
+    transform calc(var(--base-duration) / 2) var(--base-ease);
+  z-index: 1;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    height: 86vmin;
+    width: 86vmin;
+  }
+
+  &--previous,
+  &--next {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &--previous {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateX(2%);
+    }
+  }
+
+  &--next {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateX(-2%);
+    }
+  }
+}
+
+.slide--current {
+  --x: 0;
+  --y: 0;
+  --d: 50;
+
+  opacity: 1;
+
+  @media (hover: hover) {
+    &:hover .slide__image-wrapper {
+      transform: scale(1.5)
+        translate(
+          calc(var(--x) / var(--d) * 1px),
+          calc(var(--y) / var(--d) * 1px)
+        );
+    }
+  }
+}
+
+.slide__image-wrapper {
+  background-color: var(--color-accent);
+  height: 100%;
+  left: 0%;
+  overflow: hidden;
+  position: absolute;
+  top: 0%;
+  transition: transform calc(var(--base-duration) / 4) var(--base-ease);
+  width: 100%;
+}
+
+.slide__image {
+  --d: 20;
+
+  height: 110%;
+  left: -5%;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: -5%;
+  transition: opacity var(--base-duration) var(--base-ease),
+    transform var(--base-duration) var(--base-ease);
+  width: 110%;
+  filter: brightness(70%);
+
+  @media (hover: hover) {
+    .slide--current & {
+      transform: translate(
+        calc(var(--x) / var(--d) * 1px),
+        calc(var(--y) / var(--d) * 1px)
+      );
+    }
+  }
+}
+
+.slide__headline {
+  font-size: 8vmin;
+  font-weight: 600;
+  position: relative;
+}
+
+.slide__content {
+  --d: 60;
+
+  opacity: 0;
+  padding: 4vmin;
+  position: relative;
+  transition: transform var(--base-duration) var(--base-ease);
+  visibility: hidden;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .slide--current & {
+    animation: fade-in calc(var(--base-duration) / 2) var(--base-ease) forwards;
+    visibility: visible;
+
+    @media (hover: hover) {
+      transform: translate(
+        calc(var(--x) / var(--d) * -1px),
+        calc(var(--y) / var(--d) * -1px)
+      );
+    }
+  }
+
+  > * + * {
+    margin-top: 2rem;
+  }
+
+  .slide__action.btn {
+    display: block;
+    margin-top: 2rem !important;
+    width: 176.03px;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+// =========================
+// Animations
+// =========================
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

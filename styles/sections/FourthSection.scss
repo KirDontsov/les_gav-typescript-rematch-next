@@ -1,0 +1,56 @@
+@import "../Vars.scss";
+
+.fourthSection {
+  width: 100vw;
+  min-height: 100vh;
+  content: "";
+  position: relative;
+  @media (max-width: 1024px) {
+    padding: 50px;
+    @media (max-width: 768px) {
+      padding: 100px 50px 50px;
+      @media (max-width: 425px) {
+        padding: 100px 0;
+      }
+    }
+  }
+  h2 {
+    font-size: 80px;
+    line-height: 112%;
+    margin: 100px 0 100px;
+    max-width: 680px;
+    @media (max-width: 1440px) {
+      font-size: 60px;
+      @media (max-width: 768px) {
+        font-size: 40px;
+        margin: 0;
+        @media (max-width: 425px) {
+          padding-left: 50px;
+          font-size: 30px;
+          @media (max-width: 375px) {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+  .colWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 822px;
+    margin: 100px auto 100px;
+    padding: 0;
+    flex-wrap: wrap;
+    svg:nth-child(9) {
+      margin: 10px;
+    }
+    @media (max-width: 768px) {
+      max-width: 550px;
+      justify-content: space-around;
+      @media (max-width: 425px) {
+        justify-content: space-around;
+      }
+    }
+  }
+}

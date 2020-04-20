@@ -1,0 +1,133 @@
+.callBack {
+  position: absolute;
+  top: 50%;
+  right: 5.78%;
+  transform: translateY(-50%);
+  outline: none;
+  background: var(--red);
+  width: 200px;
+  height: 56px;
+  border: none;
+  margin: 0;
+  color: #fff;
+  cursor: pointer;
+  z-index: 5;
+  font-family: "Montserrat" !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.253846px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid var(--red);
+  transition: 0.3s;
+  transform-origin: left;
+
+  &:hover {
+    background: transparent;
+    color: var(--red);
+    border: 1px solid var(--red);
+  }
+
+  &.active {
+    width: 56px;
+    height: 56px;
+    color: transparent;
+    overflow: hidden;
+
+    // border-radius: 50%;
+
+    &.active:hover > .nav:before,
+    &.active:hover > .nav:after {
+      background: var(--red);
+    }
+  }
+
+  &--large {
+    z-index: 1;
+    position: relative;
+    width: 200px;
+    height: 56px;
+    z-index: 5;
+  }
+
+  &:hover {
+    .tooltip {
+      top: -100%;
+      opacity: 1;
+    }
+  }
+}
+
+.icon__burger {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease;
+
+  &.nav,
+  &.nav:before,
+  &.nav:after {
+    background: transparent;
+  }
+
+  &,
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    background: var(--black);
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    transition: all 100ms ease, right 100ms 100ms ease, left 100ms 100ms ease;
+  }
+
+  &:before {
+    left: -11px;
+    transform: translateX(-50%);
+  }
+
+  &:after {
+    right: -11px;
+    transform: translateX(50%);
+  }
+
+  &.active {
+    background: transparent;
+    transition: background 0.3s ease;
+
+    &.nav,
+    &.nav:before,
+    &.nav:after {
+      background: #fff;
+    }
+
+    &,
+    &:before,
+    &:after {
+      height: 3px;
+    }
+
+    &:before,
+    &:after {
+      width: 20px;
+      transform-origin: 50% 50%;
+      transition: all 100ms ease, width 100ms 100ms ease,
+        transform 300ms 200ms cubic-bezier(0.28, 0.55, 0.385, 1.65);
+    }
+
+    &:before {
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    &:after {
+      right: 50%;
+      transform: translateX(50%) rotate(-45deg);
+    }
+  }
+}

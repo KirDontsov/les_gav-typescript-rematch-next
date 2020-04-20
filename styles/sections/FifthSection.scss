@@ -1,0 +1,92 @@
+@import "../Vars.scss";
+
+.fifthSection {
+  width: 100vw;
+  min-height: 100vh;
+  content: "";
+  position: relative;
+  @media (max-width: 1024px) {
+    padding: 50px;
+  }
+  .centerSection {
+    h2 {
+      margin-top: -20px;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 72px;
+      color: $darkGreen;
+      @media (max-width: 1440px) {
+        font-size: 50px;
+        @media (max-width: 768px) {
+          font-size: 30px;
+          line-height: 120%;
+          @media (max-width: 375px) {
+            font-size: 30px;
+          }
+        }
+      }
+      span {
+        color: $green;
+      }
+    }
+
+    .colWrapper {
+      display: flex;
+      flex-direction: row;
+      max-width: 1337px;
+      margin: 100px auto 100px;
+      padding: 0;
+      @media (max-width: 425px) {
+        flex-direction: column;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+
+        &:nth-child(1) {
+          width: 60%;
+          padding: 0 75px 0 0;
+          @media (max-width: 1024px) {
+            padding: 0;
+          }
+          .colTitle {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 161.5%;
+            margin-bottom: 11px;
+          }
+          .colText {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 161.5%;
+            margin-bottom: 40px;
+          }
+          .arrow-container {
+            position: static;
+            transform: rotate(-90deg);
+            padding-top: 50px;
+            .arrow {
+              background: $darkGreen;
+              &:before,
+              &:after {
+                background: $darkGreen;
+                bottom: -45px;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          @media (max-width: 1024px) {
+            width: 120%;
+            position: relative;
+            left: -10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ymaps-2-1-75-ground-pane {
+  filter: grayscale(1);
+}
