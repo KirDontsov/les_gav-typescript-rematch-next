@@ -10,48 +10,48 @@ import Arrow from "../components/Arrow";
 import LazyImage from "../components/LazyImage";
 import Pagination from "../components/Pagination";
 import { trackWindowScroll } from "react-lazy-load-image-component";
-// import fetch from "isomorphic-unfetch";
-import fetch from "unfetch";
-import useSWR from "swr";
+import { GetStaticProps } from "next";
+import fetch from "isomorphic-unfetch";
+// import data from "../components/utils/photos.json";
 
-type GalleryProps = { scrollPosition?: any; getInitialProps: any };
+type GalleryProps = { scrollPosition?: any; getInitialProps: any; data: any };
 export interface Photos {
 	id: string;
 	alt: string;
 	className: string;
 	src: string;
 }
-const fetcher = (url: any) => fetch(url).then(res => res.json());
 
-const Galery: FC<GalleryProps> = ({ scrollPosition }) => {
-	const [photos, setPhotos] = useState<Array<Photos>>([]);
+const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
+	const [photos, setPhotos] = useState<Photos[] | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [photosPerPage, setPhotosPerPage] = useState(10);
 
-	const { data } = useSWR("/api/photos", fetcher);
-	setPhotos(data);
-	setLoading(false);
-	console.log(loading);
+	useEffect(
+		() => {
+			setPhotos(data);
+			setLoading(false);
 
-	// useEffect(() => {
-	// 	const fetchPhotos = async () => {
-	// 		setLoading(true);
-	// 		const res = await fetch("/api/photos");
-	// 		const data = await res.json();
-	// 		await console.log(data);
-	// 		setPhotos(data);
-	// 		setLoading(false);
-	// 	};
+			// const fetchPhotos = async () => {
+			// 	setLoading(true);
+			// 	const res = await fetch("/api/photos");
+			// 	const data = await res.json();
+			// 	await console.log(data);
+			// 	setPhotos(data);
+			// 	setLoading(false);
+			// };
 
-	// 	fetchPhotos();
-	// }, []);
+			// fetchPhotos();
+		},
+		[photos]
+	);
 
-	let currentPhotos: Array<Photos> = [];
+	let currentPhotos: Photos[] = [];
 	if (!loading) {
 		const indexOfLastCard = currentPage * photosPerPage;
 		const indexOfFirstCard = indexOfLastCard - photosPerPage;
-		currentPhotos = photos.slice(indexOfFirstCard, indexOfLastCard);
+		currentPhotos = photos!.slice(indexOfFirstCard, indexOfLastCard);
 	}
 
 	const paginate = (pageNumber: number) => {
@@ -66,7 +66,7 @@ const Galery: FC<GalleryProps> = ({ scrollPosition }) => {
 			div!.scrollTop = 0;
 		}
 	};
-
+	console.log(photos, currentPhotos);
 	return (
 		<Layout>
 			<Shutter />
@@ -82,13 +82,13 @@ const Galery: FC<GalleryProps> = ({ scrollPosition }) => {
 
 						<div className="colCenter">
 							{!loading
-								? currentPhotos.map((img, i) => {
+								? currentPhotos!.map((img, i) => {
 										return <LazyImage image={img} key={i} scrollPosition={scrollPosition} />;
 								  })
 								: null}
 
 							<div className="pagination">
-								{!loading ? <Pagination cardsPerPage={photosPerPage} totalCards={photos.length} paginate={paginate} /> : null}
+								{/* {!loading ? <Pagination cardsPerPage={photosPerPage} totalCards={photos!.length} paginate={paginate} /> : null} */}
 							</div>
 						</div>
 					</div>
@@ -96,6 +96,19 @@ const Galery: FC<GalleryProps> = ({ scrollPosition }) => {
 			</div>
 		</Layout>
 	);
+};
+
+export const getStaticProps: GetStaticProps = async context => {
+	// Call an external API endpoint to get posts.
+	const res = await fetch("https://les-gav-typescript-rematch-next.now.sh/api/photos");
+	const data = await res.json();
+	// By returning { props: posts }, the Blog component
+	// will receive `posts` as a prop at build time
+	return {
+		props: {
+			data
+		}
+	};
 };
 
 const mapState = (state: iRootState) => ({
