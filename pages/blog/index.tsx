@@ -10,7 +10,6 @@ import Arrow from "../../components/Arrow";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import fetch from "isomorphic-unfetch";
 import { Article } from "../../interfaces";
-import { Articles } from "../../components/utils/articles";
 import { LayoutOther } from "../../components/LayoutOther";
 import { ArticleListItem } from "../../components/blog/ArticleListItem";
 
