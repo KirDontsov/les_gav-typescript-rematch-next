@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { Article } from "../../interfaces";
-import Articles from "../../components/utils/articles.json";
+import { Articles } from "../../components/utils/articles";
 import { LayoutOther } from "../../components/LayoutOther";
 import ArticleListDetail from "../../components/blog/ArticleListDetail";
 

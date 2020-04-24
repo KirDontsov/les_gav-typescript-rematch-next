@@ -8,7 +8,7 @@ import Shutter from "../../components/nav/Shutter";
 import Arrow from "../../components/Arrow";
 // import Pagination from "../../components/Pagination";
 import { trackWindowScroll } from "react-lazy-load-image-component";
-import fetch from "isomorphic-unfetch";
+import { Articles } from "../../components/utils/articles";
 import { Article } from "../../interfaces";
 import { LayoutOther } from "../../components/LayoutOther";
 import { ArticleListItem } from "../../components/blog/ArticleListItem";
@@ -38,17 +38,12 @@ const Blog: FC<BlogProps> = ({ data, scrollPosition }) => (
 	</LayoutOther>
 );
 
-export const getStaticProps: GetStaticProps = async context => {
-	// Call an external API endpoint to get posts.
-	const res = await fetch("https://les-gav-typescript-rematch-next.now.sh/api/articles");
-	const data = await res.json();
-	// By returning { props: posts }, the Blog component
-	// will receive `posts` as a prop at build time
-	return {
-		props: {
-			data
-		}
-	};
+export const getStaticProps: GetStaticProps = async () => {
+	// Example for including static props in a Next.js function component page.
+	// Don't forget to include the respective types for any props passed into
+	// the component.
+	const data: Article[] = Articles;
+	return { props: { data } };
 };
 
 const mapState = (state: iRootState) => ({

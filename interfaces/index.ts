@@ -1,12 +1,12 @@
 export type Article = {
-	id: number;
+	id: string;
 	src: string;
 	alt: string;
 	title: string;
 	desc: string;
 	content: string;
 	author: string;
-	publishedAt: Date;
+	publishedAt: string;
 	className: string;
 	timeToRead: string;
 };
