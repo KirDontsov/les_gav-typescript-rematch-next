@@ -11,7 +11,7 @@ type LazyImageProps = {
 	caption?: string;
 };
 
-const LazyBlogImage: FC<LazyImageProps> = props => {
+export const LazyBlogImage: FC<LazyImageProps> = props => {
 	return (
 		<LazyLoadImage
 			alt={props.alt}
@@ -26,5 +26,3 @@ const LazyBlogImage: FC<LazyImageProps> = props => {
 		/>
 	);
 };
-
-export default LazyBlogImage;

@@ -11,7 +11,7 @@ import Pagination from "../components/Pagination";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { GetStaticProps } from "next";
 import fetch from "isomorphic-unfetch";
-import LazyBlogImage from "../components/LazyBlogImage";
+import { LazyBlogImage } from "../components/LazyBlogImage";
 import Router from "next/router";
 
 type GalleryProps = { scrollPosition?: any; getInitialProps: any; data: any };

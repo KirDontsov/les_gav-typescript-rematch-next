@@ -8,13 +8,15 @@ import Shutter from "../../components/nav/Shutter";
 
 import { Article } from "../../interfaces";
 import Arrow from "../Arrow";
+import { LazyBlogImage } from "../LazyBlogImage";
 
 interface ListDetailProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
 	slide?: any;
+	scrollPosition?: any;
 	item: Article;
 }
 
-const ArticleListDetail: FC<ListDetailProps> = ({ item: article }, props) => {
+const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition }, props) => {
 	const onClick = () => {
 		props.slide(true);
 		scrollToTop();
@@ -37,10 +39,11 @@ const ArticleListDetail: FC<ListDetailProps> = ({ item: article }, props) => {
 								<Arrow />
 							</a>
 						</Link>
+						<LazyBlogImage src={article.src} scrollPosition={scrollPosition} alt={article.title} className="blogImg" />
 
-						<h1>Detail for {article.name}</h1>
+						<h1>{article.title}</h1>
 						<div className="colCenter">
-							<p className="white">ID: {article.id}</p>
+							<p className="white">{article.content}</p>
 						</div>
 					</div>
 				</Fade>
