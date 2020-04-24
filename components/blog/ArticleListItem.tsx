@@ -1,14 +1,15 @@
-import * as React from "react";
+import React, { FC } from "react";
 import Link from "../../components/nav/Link";
 
 import { Article } from "../../interfaces";
 import { LazyBlogImage } from "../LazyBlogImage";
 
-type Props = {
+type ArticleListItemProps = {
 	data: Article;
+	scrollPosition: any;
 };
 
-export const ArticleListItem: React.FunctionComponent<Props> = ({ data, scrollPosition }) => (
+export const ArticleListItem: FC<ArticleListItemProps> = ({ data, scrollPosition }) => (
 	<Link href="/blog/[id]" as={`/blog/${data.id}`}>
 		<a>
 			<LazyBlogImage src={data.src} scrollPosition={scrollPosition} alt={data.title} className="blogImg" />

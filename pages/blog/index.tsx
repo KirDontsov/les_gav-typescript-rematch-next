@@ -14,11 +14,9 @@ import { Articles } from "../../components/utils/articles";
 import { LayoutOther } from "../../components/LayoutOther";
 import { ArticleListItem } from "../../components/blog/ArticleListItem";
 
-type Props = {
-	data: Article[];
-};
+type BlogProps = { scrollPosition?: any; getInitialProps: any; data: Article[] };
 
-const Blog = ({ data }: Props) => (
+const Blog: FC<BlogProps> = ({ data, scrollPosition }) => (
 	<LayoutOther>
 		<Shutter />
 		<div className="blogSection">
@@ -32,7 +30,7 @@ const Blog = ({ data }: Props) => (
 					<h1>Блог</h1>
 					<div className="colCenter">
 						{data.map(item => (
-							<ArticleListItem data={item} />
+							<ArticleListItem data={item} scrollPosition={scrollPosition} />
 						))}
 					</div>
 				</div>
