@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import Link from "../components/nav/Link";
 import { connect } from "react-redux";
 import { iRootState, Dispatch } from "../shared/store";
-import { Layout } from "../components/Layout";
+import { LayoutOther } from "../components/LayoutOther";
 import Shutter from "../components/nav/Shutter";
 
 interface Custom404Props extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
@@ -14,7 +14,6 @@ const Custom404: FC<Custom404Props> = props => {
 	const onClick = () => {
 		props.slide(true);
 		scrollToTop();
-		console.log("click");
 	};
 	const scrollToTop = () => {
 		let div;
@@ -24,7 +23,7 @@ const Custom404: FC<Custom404Props> = props => {
 		}
 	};
 	return (
-		<Layout>
+		<LayoutOther>
 			<Shutter />
 			<Fade delay={300}>
 				<div className="container__margin">
@@ -63,7 +62,7 @@ const Custom404: FC<Custom404Props> = props => {
 					</div>
 				</div>
 			</Fade>
-		</Layout>
+		</LayoutOther>
 	);
 };
 

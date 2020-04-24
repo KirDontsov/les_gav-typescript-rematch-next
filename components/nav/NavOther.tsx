@@ -7,7 +7,7 @@ interface NavProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnT
 	slide?: any;
 }
 
-const Nav: FC<NavProps> = props => {
+const NavOther: FC<NavProps> = props => {
 	const onClick = () => {
 		props.slide(true);
 		scrollToTop();
@@ -24,23 +24,19 @@ const Nav: FC<NavProps> = props => {
 			<div className="center nav__bot">
 				<a className="nav-link logo" href="/" onClick={onClick} />
 				<nav>
-					<a href="#secondSection" className="nav-link">
-						О Комплексе
-					</a>
-					<a href="#fourthSection" className="nav-link">
-						Сведения
-					</a>
-					<a href="#sixthSection" className="nav-link">
-						Контакты
-					</a>
+					<Link activeClassName="active" href="/">
+						<a className="nav-link" onClick={onClick}>
+							Главная
+						</a>
+					</Link>
 					<Link activeClassName="active" href="/galery">
 						<a className="nav-link" onClick={onClick}>
-							галерея
+							Галерея
 						</a>
 					</Link>
 					<Link activeClassName="active" href="/blog">
 						<a className="nav-link" onClick={onClick}>
-							блог
+							Блог
 						</a>
 					</Link>
 				</nav>
@@ -60,4 +56,4 @@ const mapDispatch = (dispatch: Dispatch) => ({
 export default connect(
 	mapState as any,
 	mapDispatch as any
-)(Nav);
+)(NavOther);
