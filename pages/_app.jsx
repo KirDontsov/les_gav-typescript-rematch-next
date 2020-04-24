@@ -1,5 +1,6 @@
 import App from "next/app";
 import React from "react";
+import { YMInitializer } from "react-yandex-metrika";
 
 import withRematch from "../shared/withRematch";
 import { Provider } from "react-redux";
@@ -11,6 +12,7 @@ class MyApp extends App {
 		return (
 			<Provider store={reduxStore}>
 				<Component {...pageProps} />
+				<YMInitializer accounts={[62082124]} options={{ webvisor: true, defer: true }} version="2" />
 			</Provider>
 		);
 	}

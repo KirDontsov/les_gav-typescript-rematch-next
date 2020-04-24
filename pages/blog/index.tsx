@@ -28,9 +28,12 @@ const Blog: FC<BlogProps> = ({ data, scrollPosition }) => (
 					</Link>
 					<h1>Блог</h1>
 					<div className="colCenter">
-						{data.map(item => (
-							<ArticleListItem data={item} scrollPosition={scrollPosition} />
-						))}
+						{data
+							.slice()
+							.reverse()
+							.map((item, i) => (
+								<ArticleListItem data={item} scrollPosition={scrollPosition} key={i} />
+							))}
 					</div>
 				</div>
 			</Fade>

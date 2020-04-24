@@ -28,6 +28,7 @@ const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition 
 			div!.scrollTop = 0;
 		}
 	};
+
 	return (
 		<LayoutOther>
 			<Shutter />
@@ -39,11 +40,15 @@ const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition 
 								<Arrow />
 							</a>
 						</Link>
-						<LazyBlogImage src={article.src} scrollPosition={scrollPosition} alt={article.title} className="blogImg" />
-
 						<h1>{article.title}</h1>
-						<div className="colCenter">
+						<div className="articleColCenter">
+							<LazyBlogImage src={article.src} scrollPosition={scrollPosition} alt={article.title} className="blogImg" />
+
 							<p className="white">{article.content}</p>
+							<div className="properties">
+								<p className="white">Опубликовано: {article.publishedAt}</p>
+								<p className="white">Автор: {article.author}</p>
+							</div>
 						</div>
 					</div>
 				</Fade>

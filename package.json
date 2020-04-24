@@ -34,6 +34,7 @@
     "react-redux": "^6.0.1",
     "react-reveal": "^1.2.2",
     "react-yandex-maps": "^4.3.0",
+    "react-yandex-metrika": "^2.6.0",
     "redux": "^4.0.1",
     "sass": "^1.26.3",
     "swr": "^0.2.0",
