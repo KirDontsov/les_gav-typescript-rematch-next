@@ -12,34 +12,61 @@ import { Articles } from "../../components/utils/articles";
 import { Article } from "../../interfaces";
 import { LayoutOther } from "../../components/LayoutOther";
 import { ArticleListItem } from "../../components/blog/ArticleListItem";
+import Burger from "../../components/Burger";
+import NavOther from "../../components/nav/NavOther";
 
 type BlogProps = { scrollPosition?: any; getInitialProps: any; data: Article[] };
 
-const Blog: FC<BlogProps> = ({ data, scrollPosition }) => (
-	<LayoutOther>
-		<Shutter />
-		<div className="blogSection">
-			<Fade delay={500} duration={2000}>
-				<div className="centerSection">
-					<Link href="/">
-						<a>
-							<Arrow />
-						</a>
-					</Link>
-					<h1>Блог</h1>
-					<div className="colCenter">
-						{data
-							.slice()
-							.reverse()
-							.map((item, i) => (
-								<ArticleListItem data={item} scrollPosition={scrollPosition} key={i} />
-							))}
+const Blog: FC<BlogProps> = ({ data, scrollPosition }) => {
+	const [width, setWidth] = useState<null | number>(null);
+	const [isMobile, setIsMobile] = useState(false);
+	useEffect(
+		() => {
+			if (typeof window !== "undefined") {
+				setWidth(window.innerWidth);
+				if (width! <= 768) {
+					setIsMobile(true);
+				}
+				if (width! > 768) {
+					setIsMobile(false);
+				}
+
+				window.addEventListener("resize", () => setWidth(window.innerWidth));
+				return () => window.removeEventListener("resize", () => setWidth(window.innerWidth));
+			}
+		},
+		[width]
+	);
+	return (
+		<LayoutOther
+			title="Лесная Гавань - информация о гостинице"
+			description="Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции"
+		>
+			<Shutter />
+			{isMobile ? <Burger /> : <NavOther />}
+			<div className="blogSection">
+				<Fade delay={500} duration={2000}>
+					<div className="centerSection">
+						<Link href="/">
+							<a>
+								<Arrow />
+							</a>
+						</Link>
+						<h1>Блог</h1>
+						<div className="colCenter">
+							{data
+								.slice()
+								.reverse()
+								.map((item, i) => (
+									<ArticleListItem data={item} scrollPosition={scrollPosition} key={i} />
+								))}
+						</div>
 					</div>
-				</div>
-			</Fade>
-		</div>
-	</LayoutOther>
-);
+				</Fade>
+			</div>
+		</LayoutOther>
+	);
+};
 
 export const getStaticProps: GetStaticProps = async () => {
 	// Example for including static props in a Next.js function component page.
@@ -54,7 +81,7 @@ const mapState = (state: iRootState) => ({
 });
 
 const mapDispatch = (dispatch: Dispatch) => ({
-	fetchSpecialists: dispatch.shutter.slide
+	slide: dispatch.shutter.slide
 });
 
 export default connect(

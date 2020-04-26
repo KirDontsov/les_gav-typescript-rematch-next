@@ -10,7 +10,7 @@ type LazyImageProps = {
 		caption?: string;
 		alt: string;
 	};
-	scrollPosition: any;
+	scrollPosition?: any;
 };
 
 const LazyImage: FC<LazyImageProps> = ({ image, scrollPosition }) => {

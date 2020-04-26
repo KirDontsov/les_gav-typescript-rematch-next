@@ -1,15 +1,6 @@
-let width;
-if (typeof window !== "undefined") {
-	window.addEventListener("resize", () => {
-		if (typeof window !== "undefined") {
-			width = window.innerWidth;
-		}
-	});
-}
-
 export const windowModel = {
 	state: {
-		width: width,
+		width: null,
 		isMobile: false
 	},
 	reducers: {

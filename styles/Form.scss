@@ -1,284 +1,284 @@
 @import "Vars.scss";
 
 .container__form {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 768px;
-  max-height: 400px;
+	position: absolute;
+	top: 500px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 768px;
+	max-height: 400px;
 }
 
 .footer__form,
 .headerForm {
-  width: 500px;
-  max-height: 400px;
-  margin: 0 auto;
+	width: 500px;
+	max-height: 400px;
+	margin: 0 auto;
 
-  .btn__container {
-    margin: 30px auto 0;
-    .send {
-      max-width: 100% !important;
-      width: 100% !important;
-      margin: 0 !important;
-      height: 62px;
-    }
-  }
+	.btn__container {
+		margin: 30px auto 0;
+		.send {
+			max-width: 100% !important;
+			width: 100% !important;
+			margin: 0 !important;
+			height: 62px;
+		}
+	}
 
-  .footer__title {
-    width: 100%;
-    text-align: center;
-  }
-  // ------- Mui -----------------
-  .MuiFormLabel-root {
-    color: #fff !important;
-    font-family: "RF Dewi", sans-serif;
-  }
+	.footer__title {
+		width: 100%;
+		text-align: center;
+	}
+	// ------- Mui -----------------
+	.MuiFormLabel-root {
+		color: #fff !important;
+		font-family: "RF Dewi", sans-serif;
+	}
 
-  .MuiInputBase-root {
-    color: #fff !important;
-    font-family: "RF Dewi", sans-serif;
-  }
+	.MuiInputBase-root {
+		color: #fff !important;
+		font-family: "RF Dewi", sans-serif;
+	}
 
-  .MuiInput-underline:before {
-    border-bottom: 1px solid #fff !important;
-  }
+	.MuiInput-underline:before {
+		border-bottom: 1px solid #fff !important;
+	}
 
-  .MuiButton-root {
-    width: 100%;
-    border-radius: 0;
-    padding: 0;
-  }
+	.MuiButton-root {
+		width: 100%;
+		border-radius: 0;
+		padding: 0;
+	}
 
-  .MuiButton-label {
-    justify-content: flex-start;
-    text-transform: none;
-    font-family: "RF Dewi", sans-serif !important;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 119.3%;
-    color: #fff;
-    background: transparent;
-    padding-bottom: 20px;
-  }
+	.MuiButton-label {
+		justify-content: flex-start;
+		text-transform: none;
+		font-family: "RF Dewi", sans-serif !important;
+		font-weight: 500;
+		font-size: 30px;
+		line-height: 119.3%;
+		color: #fff;
+		background: transparent;
+		padding-bottom: 20px;
+	}
 
-  .MuiButton-contained {
-    background: transparent;
-    &:hover {
-      background: transparent;
-      box-shadow: none;
-    }
-    &:hover ~ .arrow-container {
-      transform: rotate(-90deg) translateY(20%);
-    }
-  }
+	.MuiButton-contained {
+		background: transparent;
+		&:hover {
+			background: transparent;
+			box-shadow: none;
+		}
+		&:hover ~ .arrow-container {
+			transform: rotate(-90deg) translateY(20%);
+		}
+	}
 
-  .arrow-container {
-    transform: rotate(-90deg);
-    .arrow {
-      background: $green;
-      &:before,
-      &:after {
-        background: $green;
-      }
-    }
-  }
+	.arrow-container {
+		transform: rotate(-90deg);
+		.arrow {
+			background: $green;
+			&:before,
+			&:after {
+				background: $green;
+			}
+		}
+	}
 }
 
 .alert {
-  height: 50px;
-  background: #2ecc71;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
+	height: 50px;
+	background: #2ecc71;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
 }
 
 .sectionForm {
-  margin-left: 12.5px;
-  display: flex;
-  flex-direction: column;
-  content: "";
-  width: 100%;
-  min-height: 750px;
-  background: $darkGreen;
-  padding: 55px 38.5px;
-  @media (max-width: 425px) {
-    margin-left: 0;
-  }
+	margin-left: 12.5px;
+	display: flex;
+	flex-direction: column;
+	content: "";
+	width: 100%;
+	min-height: 750px;
+	background: $darkGreen;
+	padding: 55px 38.5px;
+	@media (max-width: 425px) {
+		margin-left: 0;
+	}
 
-  h3 {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 119.3%;
-    text-align: left;
-    margin-bottom: 65px;
-  }
-  .fieldTitle {
-    color: #fff;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 119.3%;
-    margin-top: 45px;
-  }
-  .MuiFormLabel-root {
-    color: #fff !important;
-  }
+	h3 {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 119.3%;
+		text-align: left;
+		margin-bottom: 65px;
+	}
+	.fieldTitle {
+		color: #fff;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 119.3%;
+		margin-top: 45px;
+	}
+	.MuiFormLabel-root {
+		color: #fff !important;
+	}
 
-  .MuiInputBase-root {
-    color: #fff !important;
-  }
+	.MuiInputBase-root {
+		color: #fff !important;
+	}
 
-  .MuiInput-underline:before {
-    border-bottom: 1px solid #fff !important;
-  }
+	.MuiInput-underline:before {
+		border-bottom: 1px solid #fff !important;
+	}
 
-  .MuiButton-root {
-    width: 100%;
-    border-radius: 0;
-    padding: 0;
-  }
+	.MuiButton-root {
+		width: 100%;
+		border-radius: 0;
+		padding: 0;
+	}
 
-  .MuiButton-label {
-    justify-content: flex-start;
-    text-transform: none;
-    font-family: Dewi, sans-serif !important;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 119.3%;
-  }
+	.MuiButton-label {
+		justify-content: flex-start;
+		text-transform: none;
+		font-family: Dewi, sans-serif !important;
+		font-weight: 500;
+		font-size: 30px;
+		line-height: 119.3%;
+	}
 
-  .btn__container {
-    position: relative;
-    margin-top: 60px;
-    .btn {
-      background: transparent;
-      color: #fff;
-      border: 0;
-      box-shadow: none;
-      transition: 0.3s;
-      text-align: left;
-      &:hover {
-        background: transparent;
-        box-shadow: none;
-      }
-      &:hover ~ .arrow-container {
-        transform: translate(0, -50%) rotate(-90deg) translateY(20%);
-      }
-    }
-    .arrow-container {
-      left: 70%;
-      transform: translate(0, -50%) rotate(-90deg);
-      height: 100px;
-      @media (max-width: 375px) {
-        top: 50%;
-        height: 60px;
-      }
-      .arrow {
-        height: 100px;
-        background: $green;
-        @media (max-width: 375px) {
-          height: 60px;
-        }
-        &:after,
-        &:before {
-          background: $green;
-        }
-      }
-      &:hover {
-        transform: translate(0, -50%) rotate(-90deg) translateY(20%);
-      }
-    }
-  }
+	.btn__container {
+		position: relative;
+		margin-top: 60px;
+		.btn {
+			background: transparent;
+			color: #fff;
+			border: 0;
+			box-shadow: none;
+			transition: 0.3s;
+			text-align: left;
+			&:hover {
+				background: transparent;
+				box-shadow: none;
+			}
+			&:hover ~ .arrow-container {
+				transform: translate(0, -50%) rotate(-90deg) translateY(20%);
+			}
+		}
+		.arrow-container {
+			left: 70%;
+			transform: translate(0, -50%) rotate(-90deg);
+			height: 100px;
+			@media (max-width: 375px) {
+				top: 50%;
+				height: 60px;
+			}
+			.arrow {
+				height: 100px;
+				background: $green;
+				@media (max-width: 375px) {
+					height: 60px;
+				}
+				&:after,
+				&:before {
+					background: $green;
+				}
+			}
+			&:hover {
+				transform: translate(0, -50%) rotate(-90deg) translateY(20%);
+			}
+		}
+	}
 }
 
 // burgerForm
 
 .container__mob {
-  .BurgerForm {
-    width: 320px;
-    max-height: 400px;
-    margin: 0 auto;
-    @media (max-width: 768px) {
-      width: 300px;
-    }
+	.BurgerForm {
+		width: 320px;
+		max-height: 400px;
+		margin: 0 auto;
+		@media (max-width: 768px) {
+			width: 300px;
+		}
 
-    .btn__container {
-      margin: 30px auto 0;
-      .send {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 !important;
-        height: 62px;
-      }
-    }
+		.btn__container {
+			margin: 30px auto 0;
+			.send {
+				max-width: 100% !important;
+				width: 100% !important;
+				margin: 0 !important;
+				height: 62px;
+			}
+		}
 
-    .footer__title {
-      width: 100%;
-      text-align: center;
-    }
-    // ------- Mui -----------------
-    .MuiFormLabel-root {
-      color: #fff !important;
-      font-family: "RF Dewi", sans-serif;
-    }
+		.footer__title {
+			width: 100%;
+			text-align: center;
+		}
+		// ------- Mui -----------------
+		.MuiFormLabel-root {
+			color: #fff !important;
+			font-family: "RF Dewi", sans-serif;
+		}
 
-    .MuiInputBase-root {
-      color: #fff !important;
-      font-family: "RF Dewi", sans-serif;
-    }
+		.MuiInputBase-root {
+			color: #fff !important;
+			font-family: "RF Dewi", sans-serif;
+		}
 
-    .MuiInput-underline:before {
-      border-bottom: 1px solid #fff !important;
-    }
+		.MuiInput-underline:before {
+			border-bottom: 1px solid #fff !important;
+		}
 
-    .MuiButton-root {
-      width: 100%;
-      border-radius: 0;
-      padding: 0;
-    }
+		.MuiButton-root {
+			width: 100%;
+			border-radius: 0;
+			padding: 0;
+		}
 
-    .MuiButton-label {
-      justify-content: flex-start;
-      text-transform: none;
-      font-family: "RF Dewi", sans-serif !important;
-      font-weight: 500;
-      font-size: 30px;
-      line-height: 119.3%;
-      color: #fff;
-      background: transparent;
-      padding-bottom: 20px;
-    }
+		.MuiButton-label {
+			justify-content: flex-start;
+			text-transform: none;
+			font-family: "RF Dewi", sans-serif !important;
+			font-weight: 500;
+			font-size: 30px;
+			line-height: 119.3%;
+			color: #fff;
+			background: transparent;
+			padding-bottom: 20px;
+		}
 
-    .MuiButton-contained {
-      background: transparent;
-      box-shadow: none;
-      &:hover {
-        background: transparent;
-        box-shadow: none;
-      }
-      &:hover ~ .arrow-container {
-        transform: rotate(-90deg) translateY(20%);
-      }
-    }
+		.MuiButton-contained {
+			background: transparent;
+			box-shadow: none;
+			&:hover {
+				background: transparent;
+				box-shadow: none;
+			}
+			&:hover ~ .arrow-container {
+				transform: rotate(-90deg) translateY(20%);
+			}
+		}
 
-    .arrow-container {
-      top: 200px;
-      height: 85px;
-      transform: rotate(-90deg) translateY(40%);
-      @media (max-width: 768px) {
-        top: 225px;
-      }
+		.arrow-container {
+			top: 200px;
+			height: 85px;
+			transform: rotate(-90deg) translateY(40%);
+			@media (max-width: 768px) {
+				top: 225px;
+			}
 
-      .arrow {
-        height: 85px;
-        background: $green;
-        &:before,
-        &:after {
-          background: $green;
-        }
-      }
-    }
-  }
+			.arrow {
+				height: 85px;
+				background: $green;
+				&:before,
+				&:after {
+					background: $green;
+				}
+			}
+		}
+	}
 }

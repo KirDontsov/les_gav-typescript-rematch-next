@@ -12,6 +12,8 @@ import Pagination from "../components/Pagination";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { GetStaticProps } from "next";
 import fetch from "isomorphic-unfetch";
+import Burger from "../components/Burger";
+import NavOther from "../components/nav/NavOther";
 
 type GalleryProps = { scrollPosition?: any; getInitialProps: any; data: any };
 export interface Photos {
@@ -27,12 +29,33 @@ const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [photosPerPage] = useState(10);
 
+	const [width, setWidth] = useState<null | number>(null);
+	const [isMobile, setIsMobile] = useState(false);
+
 	useEffect(
 		() => {
 			setPhotos(data);
 			setLoading(false);
 		},
 		[photos]
+	);
+
+	useEffect(
+		() => {
+			if (typeof window !== "undefined") {
+				setWidth(window.innerWidth);
+				if (width! <= 768) {
+					setIsMobile(true);
+				}
+				if (width! > 768) {
+					setIsMobile(false);
+				}
+
+				window.addEventListener("resize", () => setWidth(window.innerWidth));
+				return () => window.removeEventListener("resize", () => setWidth(window.innerWidth));
+			}
+		},
+		[width]
 	);
 
 	let currentPhotos: Photos[] = [];
@@ -55,7 +78,11 @@ const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
 		}
 	};
 	return (
-		<LayoutOther>
+		<LayoutOther
+			title="Лесная Гавань - внешний вид гостиницы, галерея"
+			description="Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции"
+		>
+			{isMobile ? <Burger /> : <NavOther />}
 			<Shutter />
 			<div className="galerySection">
 				<Fade delay={500} duration={2000}>
@@ -103,7 +130,7 @@ const mapState = (state: iRootState) => ({
 });
 
 const mapDispatch = (dispatch: Dispatch) => ({
-	fetchSpecialists: dispatch.shutter.slide
+	slide: dispatch.shutter.slide
 });
 
 export default connect(

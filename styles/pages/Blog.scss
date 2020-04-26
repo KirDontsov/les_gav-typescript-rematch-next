@@ -56,7 +56,7 @@
 				font-size: 60px;
 				@media (max-width: 768px) {
 					font-size: 40px;
-					margin: 50px 0 100px 0;
+					margin: 50px auto 100px;
 					@media (max-width: 375px) {
 						font-size: 30px;
 					}
@@ -84,6 +84,10 @@
 				justify-content: space-evenly;
 				background: $green;
 				margin-bottom: 150px;
+				@media (max-width: 768px) {
+					flex-direction: column;
+					align-items: center;
+				}
 				.white {
 					color: #fff;
 					line-height: 70px;
@@ -126,6 +130,6 @@
 	.white {
 		color: #fff;
 		margin-bottom: 50px;
-		line-height: 160%;
+		line-height: 200%;
 	}
 }

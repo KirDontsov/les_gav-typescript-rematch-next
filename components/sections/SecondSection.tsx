@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 const SecondSection = () => (
 	<Fade triggerOnce duration={2000}>
-		<div className="secondSection" id="secondSection">
+		<div className="secondSection" id="about">
 			<div className="centerSection">
 				<h2 className="dark">Об имущественном комплексе</h2>
 				<div className="colWrapper">

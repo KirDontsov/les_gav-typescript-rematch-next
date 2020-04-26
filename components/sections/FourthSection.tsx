@@ -12,7 +12,7 @@ import WiFi from "../../assets/svg/WiFi";
 
 const FourthSection = () => (
 	<Fade triggerOnce duration={2000}>
-		<div className="fourthSection" id="fourthSection">
+		<div className="fourthSection" id="svedeniya">
 			<div className="centerSection">
 				<h2 className="dark">Что такое "Лесная Гавань"</h2>
 				<div className="colWrapper">

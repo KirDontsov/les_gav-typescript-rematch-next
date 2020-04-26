@@ -7,7 +7,7 @@ import { LazyLoadComponent } from "react-lazy-load-image-component";
 const SixthSection = () => {
 	return (
 		<Fragment>
-			<div className="sixthSection" id="sixthSection">
+			<div className="sixthSection" id="contacts">
 				<Fade duration={2000}>
 					<div className="centerSection">
 						<div className="colWrapper">
