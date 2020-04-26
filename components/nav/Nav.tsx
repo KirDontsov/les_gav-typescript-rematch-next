@@ -24,13 +24,13 @@ const Nav: FC<NavProps> = props => {
 			<div className="center nav__bot">
 				<a className="nav-link logo" href="/" onClick={onClick} />
 				<nav>
-					<a href="#secondSection" className="nav-link">
+					<a href="#about" className="nav-link">
 						О Комплексе
 					</a>
-					<a href="#fourthSection" className="nav-link">
+					<a href="#svedeniya" className="nav-link">
 						Сведения
 					</a>
-					<a href="#sixthSection" className="nav-link">
+					<a href="#caontacts" className="nav-link">
 						Контакты
 					</a>
 					<Link activeClassName="active" href="/galery">
