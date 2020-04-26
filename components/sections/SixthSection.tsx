@@ -20,9 +20,13 @@ const SixthSection = () => {
 									353993, Краснодарский край, г. Новороссийск, урочище Широкая балка, гостиница «Лесная Гавань»
 								</div>
 								<div className="colTitle">Телефон:</div>
-								<div className="colText">8 (928) 260-01-65</div>
+								<a href="tel:+79282600165" className="colText">
+									+7 (928) 260-01-65
+								</a>
 								<div className="colTitle">Почта:</div>
-								<div className="colText">glavdomop@gmail.com</div>
+								<a href="mailto:glavdomop@gmail.com" className="colText">
+									glavdomop@gmail.com
+								</a>
 							</div>
 							<div className="col">
 								<LazyLoadComponent>

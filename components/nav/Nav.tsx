@@ -30,7 +30,7 @@ const Nav: FC<NavProps> = props => {
 					<a href="#svedeniya" className="nav-link">
 						Сведения
 					</a>
-					<a href="#caontacts" className="nav-link">
+					<a href="#contacts" className="nav-link">
 						Контакты
 					</a>
 					<Link activeClassName="active" href="/galery">
