@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { sendEmail } from "../../components/utils/sendEmail";
+import { sendEmail } from "../../components/utils/SendEmail";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === "POST") {
