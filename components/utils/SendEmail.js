@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 
 const SENDGRID_API = "https://api.sendgrid.com/v3/mail/send";
-const SENDGRID_API_KEY = "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";
+const SENDGRID_API_KEY = "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";
 
-const sendEmail = async ({ name, email }) => {
+export const sendEmail = async ({ name, email }) => {
 	await fetch(SENDGRID_API, {
 		method: "POST",
 		headers: {
@@ -15,14 +15,14 @@ const sendEmail = async ({ name, email }) => {
 				{
 					to: [
 						{
-							email
+							email: "kir.dontsov@gmail.com"
 						}
 					],
 					subject: "Demo success :)"
 				}
 			],
 			from: {
-				email: "noreply@demo.com",
+				email,
 				name: "Test SendGrid"
 			},
 			content: [
@@ -34,5 +34,3 @@ const sendEmail = async ({ name, email }) => {
 		})
 	});
 };
-
-export { sendEmail };
