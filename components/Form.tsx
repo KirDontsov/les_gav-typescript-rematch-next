@@ -1,10 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, ChangeEvent } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import MaskInput from "./MaskInput";
 import Arrow from "./Arrow";
-import { connect } from "react-redux";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { connect } from "react-redux";
+import { iRootState, Dispatch } from "../shared/store";
+
+interface FoormProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
+	slide?: any;
+	type?: string;
+}
 
 const theme = createMuiTheme({
 	typography: {
@@ -20,7 +26,7 @@ const theme = createMuiTheme({
 	}
 });
 
-class Form extends Component {
+class Form extends Component<FoormProps> {
 	render() {
 		const { email, phone, name } = this.props;
 		const values = {
@@ -36,13 +42,13 @@ class Form extends Component {
 
 						<p className="fieldTitle">Ваше Имя</p>
 						<TextField
-							onChange={e => this.props.setName(e.currentTarget.value)}
+							onChange={(e: ChangeEvent<HTMLInputElement>) => this.props.setName!(e.currentTarget.value)}
 							value={values.name}
 							margin="normal"
 							fullWidth={true}
 							required
 						/>
-						{values.name.length !== 0 && <span className="errorMessage">Введите Имя</span>}
+						{values.name!.length !== 0 && <span className="errorMessage">Введите Имя</span>}
 
 						<p className="fieldTitle">Ваш Телефон</p>
 						<MaskInput
@@ -52,23 +58,23 @@ class Form extends Component {
 							label="Required"
 							type="text"
 							value={values.phone}
-							onChange={e => this.props.setPhone(e.currentTarget.value)}
+							onChange={(e: ChangeEvent<HTMLInputElement>) => this.props.setPhone!(e.currentTarget.value)}
 							fullWidth={true}
 						/>
 						<p className="fieldTitle">Ваш Email</p>
 						<TextField
-							onChange={e => this.props.setEmail(e.currentTarget.value)}
+							onChange={(e: ChangeEvent<HTMLInputElement>) => this.props.setEmail!(e.currentTarget.value)}
 							value={values.email}
 							margin="normal"
 							fullWidth={true}
 							required
 						/>
-						{values.email.length !== 0 && !values.email.includes("@") && (
+						{values.email!.length !== 0 && !values.email!.includes("@") && (
 							<span className="errorMessage">Введен некорректный адрес почты</span>
 						)}
 
 						<div className="btn__container">
-							<Button variant="contained" onClick={e => this.props.changeDisabled()} className="next btn send">
+							<Button variant="contained" onClick={() => this.props.changeDisabled!()} className="next btn send">
 								{this.props.fetching ? "Отправка..." : "Отправить"}
 							</Button>
 							<Arrow />
@@ -90,25 +96,25 @@ class Form extends Component {
 						formLabel="Телефон"
 						type="text"
 						value={values.phone}
-						onChange={e => this.props.setPhone(e.currentTarget.value)}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => this.props.setPhone!(e.currentTarget.value)}
 						fullWidth={true}
 					/>
 
 					<TextField
 						label="Email"
-						onChange={e => this.props.setEmail(e.currentTarget.value)}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => this.props.setEmail!(e.currentTarget.value)}
 						value={values.email}
 						margin="normal"
 						fullWidth={true}
 						required
 					/>
-					{values.email.length !== 0 && !values.email.includes("@") && (
+					{values.email!.length !== 0 && !values.email!.includes("@") && (
 						<span className="errorMessage">Введен некорректный адрес почты</span>
 					)}
 					<br />
 
 					<div className="btn__container">
-						<Button variant="contained" onClick={e => this.props.changeDisabled()} className="next btn send">
+						<Button variant="contained" onClick={() => this.props.changeDisabled!()} className="next btn send">
 							{this.props.fetching ? "Отправка..." : "Отправить"}
 						</Button>
 						<Arrow />
@@ -120,7 +126,7 @@ class Form extends Component {
 	}
 }
 
-const mapState = state => ({
+const mapState = (state: iRootState) => ({
 	email: state.form.email,
 	phone: state.form.phone,
 	name: state.form.name,
@@ -128,15 +134,16 @@ const mapState = state => ({
 	res: state.form.res
 });
 
-const mapDispatch = ({ shutter: { changeClass }, form: { setEmail, setPhone, setName, changeDisabled } }) => ({
-	changeClass,
-	setEmail,
-	setPhone,
-	setName,
-	changeDisabled
+const mapDispatch = (dispatch: Dispatch) => ({
+	slide: dispatch.shutter.slide,
+	changeClass: dispatch.shutter.changeClass,
+	setEmail: dispatch.form.setEmail,
+	setPhone: dispatch.form.setPhone,
+	setName: dispatch.form.setName,
+	changeDisabled: dispatch.form.changeDisabled
 });
 
 export default connect(
-	mapState,
-	mapDispatch
+	mapState as any,
+	mapDispatch as any
 )(Form);

@@ -32,8 +32,7 @@ export const form = {
 		changeDisabled(payload, state) {
 			if (state.form.phone && state.form.email && state.form.email.includes("@") !== "") {
 				dispatch.form.setFetching(true);
-				fetch("mail.php", {
-					credentials: "same-origin",
+				fetch("/api/send-email", {
 					method: "POST",
 					body: JSON.stringify({
 						email: state.form.email,
@@ -46,9 +45,7 @@ export const form = {
 				}).then(response => {
 					dispatch.form.setFetching(false);
 					dispatch.form.setRes(true);
-					response.json().then(data => {
-						console.log("Successful" + data);
-					});
+					console.log("Successful" + response);
 				});
 			}
 		}
