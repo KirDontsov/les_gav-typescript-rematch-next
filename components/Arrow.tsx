@@ -10,7 +10,7 @@ const Arrow: FC<ArrowProps> = props => {
 	return (
 		<>
 			{props.type !== undefined && props.type === "secondSection" ? (
-				<a href="#secondSection">
+				<a href="#about">
 					<div className="arrow-container vertical">
 						<div className={props.color === "green" ? "arrow green" : "arrow"} />
 					</div>
