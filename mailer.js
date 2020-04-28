@@ -24,11 +24,11 @@ const send = ({ email, name, phone }) => {
 	const from = name && email && phone ? `${name} <${email}> ${phone}` : `${name || email} ${phone}`;
 	const message = {
 		from: "wwwdks@yandex.ru",
-		to: "kir.dontsov@gmail.com",
+		to: "kir.dontsov@gmail.com, glavdomop@gmail.com",
 		subject: `Заявка от ${from}`,
 		html: `
-    <h1 style="width: 100%; padding: 50px 8px 30px;" >Новая заявка с сайта lesnaya-gavan.ru<h1>
-    <table style="width: 100%; border: 1px solid #ddd; border-collapse: collapse;">
+    <h1 style="width: 700px; padding: 50px 8px 30px;" >Новая заявка с сайта lesnaya-gavan.ru<h1>
+    <table style="width: 700px; border: 1px solid #ddd; border-collapse: collapse;">
       <thead>
       <tr style="background: #f9f9f9;">
         <th style="padding: 8px; border: 1px solid #ddd;">Имя</th>
