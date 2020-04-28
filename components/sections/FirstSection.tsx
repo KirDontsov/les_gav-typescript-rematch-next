@@ -30,7 +30,7 @@ const FirstSection: FC = () => (
 				className="heroBanner"
 			/>
 		</Fade>
-		<Arrow direction="vertical" type="secondSection" />
+		<Arrow direction="vertical" type="about" />
 	</div>
 );
 

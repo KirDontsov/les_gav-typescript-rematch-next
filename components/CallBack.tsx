@@ -1,24 +1,29 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, FC } from "react";
 import classNames from "classnames";
 import Form from "./Form";
 import { connect } from "react-redux";
+import { iRootState, Dispatch } from "../shared/store";
 
-const Button = props => (
+type ButtonProps = { className: string; onClick: () => void };
+const Button: FC<ButtonProps> = props => (
 	<button className={classNames(props.className)} onClick={props.onClick}>
 		{props.children}
 	</button>
 );
 
-class CallBack extends Component {
+interface CallBackProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
+	slide?: any;
+}
+
+class CallBack extends Component<CallBackProps> {
 	openModal() {
-		this.props.changeClass(!this.props.addClass);
-		this.props.changeActive(!this.props.active);
+		this.props.changeClass!(!this.props.addClass);
+		this.props.changeActive!(!this.props.active);
 	}
 
 	render() {
 		let buttonClass = ["callBack"];
 		let navClass = ["nav__toggle"];
-		let header = ["header__form"];
 
 		if (this.props.addClass) {
 			buttonClass.push("active");
@@ -28,7 +33,7 @@ class CallBack extends Component {
 			<Fragment>
 				<div className={navClass.join(" ")}>
 					<div className="container__form">
-						<Form className={header} type={"headerForm"} />
+						<Form type={"headerForm"} />
 					</div>
 				</div>
 				<Button
@@ -45,17 +50,17 @@ class CallBack extends Component {
 	}
 }
 
-const mapState = state => ({
+const mapState = (state: iRootState) => ({
 	addClass: state.callBack.addClass,
 	active: state.callBack.active
 });
 
-const mapDispatch = ({ callBack: { changeClass, changeActive } }) => ({
-	changeClass,
-	changeActive
+const mapDispatch = (dispatch: Dispatch) => ({
+	changeClass: dispatch.callBack.changeClass,
+	changeActive: dispatch.callBack.changeActive
 });
 
 export default connect(
-	mapState,
-	mapDispatch
+	mapState as any,
+	mapDispatch as any
 )(CallBack);

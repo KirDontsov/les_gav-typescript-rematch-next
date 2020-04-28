@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "./Link";
 import { connect } from "react-redux";
 import { iRootState, Dispatch } from "../../shared/store";
+import CallBack from "../CallBack";
 
 interface NavProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
 	slide?: any;
@@ -44,6 +45,7 @@ const Nav: FC<NavProps> = props => {
 						</a>
 					</Link>
 				</nav>
+				<CallBack />
 			</div>
 		</div>
 	);
