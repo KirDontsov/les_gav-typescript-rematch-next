@@ -32,7 +32,7 @@ export const form = {
 		changeDisabled(payload, state) {
 			if (state.form.phone && state.form.email && state.form.email.includes("@") !== "") {
 				dispatch.form.setFetching(true);
-				fetch("http://297570-cs09732.tmweb.ru", {
+				fetch("http://react.rainbows23.tmweb.ru/mail.php", {
 					method: "POST",
 					body: JSON.stringify({
 						email: state.form.email,
