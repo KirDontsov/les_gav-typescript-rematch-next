@@ -39,12 +39,16 @@ export const form = {
 						phone: state.form.phone,
 						name: state.form.name
 					}),
-					headers: new Headers({
-						"Content-Type": "application/json"
-					})
+					headers: {
+						"Content-Type": "application/json",
+						Accept: "application/json"
+					}
 				}).then(response => {
 					dispatch.form.setFetching(false);
 					dispatch.form.setRes(true);
+					response.text().then(data => {
+						console.log(data);
+					});
 				});
 			}
 		}
