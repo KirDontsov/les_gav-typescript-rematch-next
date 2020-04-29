@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import { Fade } from "react-awesome-reveal";
 import Form from "../Form";
 import Arrow from "../Arrow";
 
-const FifthSection = () => {
+const FifthSection: FC = () => {
 	return (
 		<div className="fifthSection" id="fifthSection">
 			<Fade triggerOnce duration={2000}>

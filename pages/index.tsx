@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Layout } from "../components/Layout";
 import { iRootState, Dispatch } from "../shared/store";
 import Shutter from "../components/nav/Shutter";
-import Burger from "../components/Burger";
+import { Burger } from "../components/Burger";
 
 import FirstSection from "../components/sections/FirstSection";
 import SecondSection from "../components/sections/SecondSection";

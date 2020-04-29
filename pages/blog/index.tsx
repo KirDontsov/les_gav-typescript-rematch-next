@@ -12,7 +12,7 @@ import { Articles } from "../../components/utils/articles";
 import { Article } from "../../interfaces";
 import { LayoutOther } from "../../components/LayoutOther";
 import { ArticleListItem } from "../../components/blog/ArticleListItem";
-import Burger from "../../components/Burger";
+import { Burger } from "../../components/Burger";
 import NavOther from "../../components/nav/NavOther";
 
 type BlogProps = { scrollPosition?: any; getInitialProps: any; data: Article[] };

@@ -12,7 +12,7 @@ import Pagination from "../components/Pagination";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { GetStaticProps } from "next";
 import fetch from "isomorphic-unfetch";
-import Burger from "../components/Burger";
+import { Burger } from "../components/Burger";
 import NavOther from "../components/nav/NavOther";
 
 type GalleryProps = { scrollPosition?: any; getInitialProps: any; data: any };

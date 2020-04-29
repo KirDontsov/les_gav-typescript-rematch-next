@@ -29,7 +29,7 @@ const FirstSection: FC<FirstSectionProps> = props => (
 				alt="Имущественный комплекс Санаторий Лесная Гавань"
 			/>
 		</div>
-		<Arrow direction="vertical" type="about" />
+		<Arrow direction="vertical" type="secondSection" />
 	</div>
 );
 

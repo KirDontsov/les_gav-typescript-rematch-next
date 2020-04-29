@@ -1,8 +1,7 @@
-import React, { FC } from "react";
-import { Fade } from "react-awesome-reveal";
+import React from "react";
 
-const SecondSection: FC = () => (
-	<Fade triggerOnce duration={2000}>
+const SecondSection = () => {
+	return (
 		<div className="secondSection" id="about">
 			<div className="centerSection">
 				<h2 className="dark">Об имущественном комплексе</h2>
@@ -51,7 +50,7 @@ const SecondSection: FC = () => (
 				</div>
 			</div>
 		</div>
-	</Fade>
-);
+	);
+};
 
 export default SecondSection;

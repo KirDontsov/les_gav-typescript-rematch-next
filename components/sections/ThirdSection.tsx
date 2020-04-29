@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from "react";
+import React, { FC, useCallback } from "react";
 import { Fade } from "react-awesome-reveal";
 import LazyImage from "../LazyImage";
 import ArrowHorizontal from "../ArrowHorizontal";
@@ -13,10 +13,10 @@ interface ThirdSectionProps extends Partial<ReturnType<typeof mapState>>, Partia
 	scrollPosition?: any;
 }
 const ThirdSection: FC<ThirdSectionProps> = props => {
-	const handleClick = () => {
+	const handleClick = useCallback(() => {
 		scrollToTop();
 		props.slide(true);
-	};
+	}, []);
 
 	const scrollToTop = () => {
 		let div;
@@ -26,7 +26,7 @@ const ThirdSection: FC<ThirdSectionProps> = props => {
 		}
 	};
 	return (
-		<div className="thirdSection" id="thirdSection">
+		<div className="thirdSection" id="vneshniyvid">
 			<Fade triggerOnce duration={2000}>
 				<div className="centerSection">
 					{props.title ? (

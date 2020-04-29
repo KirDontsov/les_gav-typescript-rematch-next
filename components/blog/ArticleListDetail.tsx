@@ -9,7 +9,7 @@ import Shutter from "../../components/nav/Shutter";
 import { Article } from "../../interfaces";
 import Arrow from "../Arrow";
 import { LazyBlogImage } from "../LazyBlogImage";
-import Burger from "../Burger";
+import { Burger } from "../Burger";
 import NavOther from "../nav/NavOther";
 
 interface ListDetailProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
@@ -21,18 +21,6 @@ interface ListDetailProps extends Partial<ReturnType<typeof mapState>>, Partial<
 const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition }, props) => {
 	const [width, setWidth] = useState<null | number>(null);
 	const [isMobile, setIsMobile] = useState(false);
-
-	const onClick = () => {
-		props.slide(true);
-		scrollToTop();
-	};
-	const scrollToTop = () => {
-		let div;
-		if (div !== null) {
-			div = document.querySelector(".wrapper");
-			div!.scrollTop = 0;
-		}
-	};
 
 	useEffect(
 		() => {
