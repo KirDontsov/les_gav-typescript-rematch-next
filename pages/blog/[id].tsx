@@ -25,7 +25,7 @@ export default class StaticPropsDetail extends React.Component<Props> {
 			);
 		}
 
-		return <LayoutOther>{item && <ArticleListDetail item={item} />}</LayoutOther>;
+		return <>{item && <ArticleListDetail item={item} />}</>;
 	}
 }
 

@@ -1,93 +1,93 @@
 @import "../Vars.scss";
 
 .arrow-container {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 50px;
-  height: 155px;
-  transition: 0.3s;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  @media (max-width: 1440px) {
-    top: 80%;
-    @media (max-width: 1024px) {
-      top: 85%;
-      @media (max-width: 425px) {
-        top: 70%;
-        @media (max-width: 320px) {
-          top: 90%;
-        }
-      }
-    }
-  }
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	width: 50px;
+	height: 155px;
+	transition: 0.3s;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	@media (max-width: 1440px) {
+		top: 80%;
+		@media (max-width: 1024px) {
+			top: 85%;
+			@media (max-width: 425px) {
+				top: 70%;
+				@media (max-width: 320px) {
+					top: 90%;
+				}
+			}
+		}
+	}
 
-  &:hover {
-    transform: translate(-50%, -50%) translateY(20%);
-  }
-  &.horizontal {
-    top: 50%;
-    left: 90%;
-    transform: translate(0, -50%) rotate(-90deg);
+	&:hover {
+		transform: translate(-50%, -50%) translateY(20%);
+	}
+	&.horizontal {
+		top: 50%;
+		left: 90%;
+		transform: translate(0, -50%) rotate(-90deg);
 
-    &.hovered {
-      transform: translateY(-50%) rotate(-90deg) translateY(20%);
-    }
-    &:hover {
-      transform: translateY(-50%) rotate(-90deg) translateY(20%);
-    }
-    @media (max-width: 1024px) {
-      left: 85%;
-      @media (max-width: 768px) {
-        left: 80%;
-        @media (max-width: 425px) {
-          left: 70%;
-        }
-      }
-    }
-  }
-  .arrow {
-    width: 8px;
-    height: 155px;
-    background: #fff;
+		&.hovered {
+			transform: translateY(-50%) rotate(-90deg) translateY(20%);
+		}
+		&:hover {
+			transform: translateY(-50%) rotate(-90deg) translateY(20%);
+		}
+		@media (max-width: 1024px) {
+			left: 85%;
+			@media (max-width: 768px) {
+				left: 80%;
+				@media (max-width: 425px) {
+					left: 70%;
+				}
+			}
+		}
+	}
+	.arrow {
+		width: 8px;
+		height: 155px;
+		background: #fff;
 
-    transition: 0.3s;
-    &.green {
-      background: $green;
-      &:after {
-        background: $green;
-      }
-      &:before {
-        background: $green;
-      }
-    }
+		transition: 0.3s;
+		&.green {
+			background: $green;
+			&:after {
+				background: $green;
+			}
+			&:before {
+				background: $green;
+			}
+		}
 
-    &:after {
-      width: 41px;
-      height: 7px;
-      content: "";
-      display: block;
-      background: #fff;
-      position: absolute;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-20%) rotate(-45deg);
-      transition: 0.3s;
-    }
-    &:before {
-      width: 41px;
-      height: 7px;
-      content: "";
-      display: block;
-      background: #fff;
-      position: absolute;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-80%) rotate(45deg);
-      transition: 0.3s;
-    }
-  }
+		&:after {
+			width: 41px;
+			height: 7px;
+			content: "";
+			display: block;
+			background: #fff;
+			position: absolute;
+			bottom: 5px;
+			left: 50%;
+			transform: translateX(-20%) rotate(-45deg);
+			transition: 0.3s;
+		}
+		&:before {
+			width: 41px;
+			height: 7px;
+			content: "";
+			display: block;
+			background: #fff;
+			position: absolute;
+			bottom: 5px;
+			left: 50%;
+			transform: translateX(-80%) rotate(45deg);
+			transition: 0.3s;
+		}
+	}
 }

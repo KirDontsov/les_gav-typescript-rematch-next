@@ -64,9 +64,10 @@
 
 	.MuiButton-contained {
 		background: transparent;
+		box-shadow: none !important;
 		&:hover {
 			background: transparent;
-			box-shadow: none;
+			box-shadow: none !important;
 		}
 		&:hover ~ .arrow-container {
 			transform: rotate(-90deg) translateY(20%);
@@ -75,6 +76,9 @@
 
 	.arrow-container {
 		transform: rotate(-90deg);
+		&:hover {
+			transform: rotate(-90deg) translateY(20%);
+		}
 		.arrow {
 			background: $green;
 			&:before,
@@ -164,13 +168,16 @@
 				box-shadow: none;
 			}
 			&:hover ~ .arrow-container {
-				transform: translate(0, -50%) rotate(-90deg) translateY(20%);
+				transform: translate(0, -50%) rotate(-90deg) translateY(20%) !important;
 			}
 		}
 		.arrow-container {
 			left: 70%;
 			transform: translate(0, -50%) rotate(-90deg);
 			height: 100px;
+			&:hover {
+				transform: none;
+			}
 			@media (max-width: 375px) {
 				top: 50%;
 				height: 60px;
@@ -187,7 +194,7 @@
 				}
 			}
 			&:hover {
-				transform: translate(0, -50%) rotate(-90deg) translateY(20%);
+				transform: none;
 			}
 		}
 	}
