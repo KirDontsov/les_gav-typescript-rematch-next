@@ -17,7 +17,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = ({ data, scrollPosition
 			<div className="white">{data.desc}</div>
 			<div className="properties">
 				<p className="white">Время чтения: {data.timeToRead} мин.</p>
-				<p className="white">Опубликовано: {data.publishedAt}</p>
+				<p className="white">Опубликовано: {new Date(data.publishedAt).toLocaleDateString()}</p>
 				<p className="white">Автор: {data.author}</p>
 			</div>
 		</a>

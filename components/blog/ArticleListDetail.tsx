@@ -39,7 +39,6 @@ const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition 
 		},
 		[width]
 	);
-
 	return (
 		<LayoutOther
 			title={article.title}
@@ -59,9 +58,9 @@ const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition 
 						<div className="articleColCenter">
 							<LazyBlogImage src={article.src} scrollPosition={scrollPosition} alt={article.title} className="blogImg" />
 
-							<p className="white">{article.content}</p>
+							<div className="white" dangerouslySetInnerHTML={{ __html: article.content }} />
 							<div className="properties">
-								<p className="white">Опубликовано: {article.publishedAt}</p>
+								<p className="white">Опубликовано: {new Date(article.publishedAt).toLocaleDateString()}</p>
 								<p className="white">Автор: {article.author}</p>
 							</div>
 						</div>
