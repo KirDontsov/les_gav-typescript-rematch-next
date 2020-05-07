@@ -14,6 +14,7 @@ export const Layout: FC<Props> = ({ children }) => (
 			<link rel="icon" type="image/x-icon" href={require("../assets/img/logo192.png")} />
 			<link rel="shortcut icon" href="/static/favicon.ico" />
 			<script
+				async
 				dangerouslySetInnerHTML={{
 					__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 					new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
