@@ -4,7 +4,7 @@ import Form from "./Form";
 import { connect } from "react-redux";
 import { iRootState, Dispatch } from "../shared/store";
 
-type ButtonProps = { className: string; onClick: () => void };
+type ButtonProps = { className: string; onClick: () => void; title: string; id: string; onclick: string };
 const Button: FC<ButtonProps> = props => (
 	<button className={classNames(props.className)} onClick={props.onClick}>
 		{props.children}
@@ -41,6 +41,9 @@ class CallBack extends Component<CallBackProps> {
 					onClick={() => {
 						this.openModal();
 					}}
+					title="Оставить заявку"
+					id="application"
+					onclick="yaCounter62082124.reachGoal('application');ga('send','event','button','application');"
 				>
 					<span className={this.props.active ? "icon__burger nav active" : "icon__burger nav"} />
 					Оставить заявку

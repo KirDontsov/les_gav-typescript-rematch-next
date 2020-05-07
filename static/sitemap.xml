@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="/styles/index.css" type="text/css" ?>
+<?xml-stylesheet href="test/test/styles.xls" type="text/xsl" ?>
+
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      <url><loc>http://lesnaya-gavan.ru//404</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//404" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//api/articles</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//api/articles" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//api/photos</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//api/photos" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//blog/index</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//blog/index" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//blog/[id]</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//blog/[id]" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//galery</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//galery" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//index</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//index" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url><url><loc>http://lesnaya-gavan.ru//extraPath</loc>
+                <xhtml:link rel="alternate" hreflang="en" href="http://lesnaya-gavan.ru//extraPath" />
+                
+                
+                <lastmod>2020-05-07</lastmod>
+                </url></urlset>
