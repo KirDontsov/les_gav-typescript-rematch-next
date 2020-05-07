@@ -21,6 +21,7 @@ import FifthSectionMob from "../components/sections_mobile/FifthSectionMob";
 import SixthSectionMob from "../components/sections_mobile/SixthSectionMob";
 import slideData from "../categories/Categories";
 import Nav from "../components/nav/Nav";
+import Head from "next/head";
 
 interface HomeProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
 	slide?: any;
@@ -48,11 +49,16 @@ const Home: FC<HomeProps> = props => {
 		[width]
 	);
 
+	const title = "Лесная Гавань - продается имущественный комплекс";
+	const description =
+		"Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции";
+
 	return (
-		<Layout
-			title="Лесная Гавань - продается имущественный комплекс"
-			description="Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции"
-		>
+		<Layout>
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+			</Head>
 			<Shutter />
 
 			{isMobile ? (

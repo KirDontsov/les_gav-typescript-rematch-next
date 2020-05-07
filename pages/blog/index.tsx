@@ -14,6 +14,7 @@ import { LayoutOther } from "../../components/LayoutOther";
 import { ArticleListItem } from "../../components/blog/ArticleListItem";
 import { Burger } from "../../components/Burger";
 import NavOther from "../../components/nav/NavOther";
+import Head from "next/head";
 
 type BlogProps = { scrollPosition?: any; getInitialProps: any; data: Article[] };
 
@@ -37,12 +38,16 @@ const Blog: FC<BlogProps> = ({ data, scrollPosition }) => {
 		},
 		[width]
 	);
+	const title = "Лесная Гавань - информация о гостинице";
+	const description =
+		"Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции";
 	return (
-		<LayoutOther
-			title="Лесная Гавань - информация о гостинице"
-			description="Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции"
-		>
+		<LayoutOther>
 			<Shutter />
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+			</Head>
 			{isMobile ? <Burger /> : <NavOther />}
 			<div className="blogSection">
 				<Fade delay={500} duration={2000}>

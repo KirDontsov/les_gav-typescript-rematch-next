@@ -11,6 +11,7 @@ import Arrow from "../Arrow";
 import { LazyBlogImage } from "../LazyBlogImage";
 import { Burger } from "../Burger";
 import NavOther from "../nav/NavOther";
+import Head from "next/head";
 
 interface ListDetailProps extends Partial<ReturnType<typeof mapState>>, Partial<ReturnType<typeof mapDispatch>> {
 	slide?: any;
@@ -40,10 +41,11 @@ const ArticleListDetail: FC<ListDetailProps> = ({ item: article, scrollPosition 
 		[width]
 	);
 	return (
-		<LayoutOther
-			title={article.title}
-			description="Лесная Гавань - продается имущественный комплекс, готовый гостиничный бизнес, имеется возможность реконструкции"
-		>
+		<LayoutOther>
+			<Head>
+				<title>{article.title}</title>
+				<meta name="description" content={article.desc} />
+			</Head>
 			<Shutter />
 			{isMobile ? <Burger /> : <NavOther />}
 			<div className="blogSection">

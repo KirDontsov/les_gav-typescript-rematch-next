@@ -14,6 +14,7 @@ import { GetStaticProps } from "next";
 import fetch from "isomorphic-unfetch";
 import { Burger } from "../components/Burger";
 import NavOther from "../components/nav/NavOther";
+import Head from "next/head";
 
 type GalleryProps = { scrollPosition?: any; getInitialProps: any; data: any };
 export interface Photos {
@@ -77,11 +78,15 @@ const Galery: FC<GalleryProps> = ({ scrollPosition, data }) => {
 			div!.scrollTop = 0;
 		}
 	};
+
+	const title = "Лесная Гавань - внешний вид гостиницы, галерея";
+	const description = "Лесная Гавань - отличное место, чтобы насладиться невероятными пейзажами краснодарского края";
 	return (
-		<LayoutOther
-			title="Лесная Гавань - внешний вид гостиницы, галерея"
-			description="Лесная Гавань - отличное место, чтобы насладиться невероятными пейзажами краснодарского края"
-		>
+		<LayoutOther>
+			<Head>
+				<title>{title}</title>
+				<meta name="description" content={description} />
+			</Head>
 			{isMobile ? <Burger /> : <NavOther />}
 			<Shutter />
 			<div className="galerySection">

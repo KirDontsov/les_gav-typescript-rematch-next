@@ -2,16 +2,11 @@ import React, { FC } from "react";
 import Head from "next/head";
 import Footer from "./footer/Footer";
 
-type Props = {
-	title?: string;
-	description?: string;
-};
+type Props = {};
 
-export const LayoutOther: FC<Props> = ({ children, title, description }) => (
+export const LayoutOther: FC<Props> = ({ children }) => (
 	<div className="wrapper">
 		<Head>
-			<title>{title}</title>
-			<meta name="description" content={description} />
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			<link rel="icon" type="image/x-icon" href={require("../assets/img/logo192.png")} />
 			<link rel="shortcut icon" href="/static/favicon.ico" />

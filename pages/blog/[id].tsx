@@ -5,6 +5,7 @@ import { Article } from "../../interfaces";
 import { Articles } from "../../components/utils/articles";
 import { LayoutOther } from "../../components/LayoutOther";
 import ArticleListDetail from "../../components/blog/ArticleListDetail";
+import Head from "next/head";
 
 type Props = {
 	item?: Article;
@@ -18,6 +19,10 @@ export default class StaticPropsDetail extends React.Component<Props> {
 		if (errors) {
 			return (
 				<LayoutOther>
+					<Head>
+						<title>{item && item.title}</title>
+						<meta name="description" content={item && item.desc} />
+					</Head>
 					<p>
 						<span style={{ color: "red" }}>Ошибка:</span> {errors}
 					</p>
