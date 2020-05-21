@@ -77,9 +77,14 @@ export const Burger: FC<BurgerProps> = () => {
 										Блог
 									</a>
 								</Link>
-								<div className="container__form">
-									<Form type={"BurgerForm"} />
-								</div>
+								<div className="callBackPhoneTitle">Телефон:</div>
+								<a href="tel:+79282600165" className="callBackPhone">
+									+7 (928) 260-01-65
+								</a>
+								<div className="callBackEmailTitle">Почта:</div>
+								<a href="mailto:glavdomop@gmail.com" className="callBackEmail">
+									glavdomop@gmail.com
+								</a>
 							</div>
 						</div>
 						<Button

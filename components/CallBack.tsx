@@ -4,7 +4,7 @@ import Form from "./Form";
 import { connect } from "react-redux";
 import { iRootState, Dispatch } from "../shared/store";
 
-type ButtonProps = { className: string; onClick: () => void; title: string; id: string; onclick: string };
+type ButtonProps = { className: string; onClick: () => void; title: string; id: string };
 const Button: FC<ButtonProps> = props => (
 	<button className={classNames(props.className)} onClick={props.onClick}>
 		{props.children}
@@ -33,7 +33,14 @@ class CallBack extends Component<CallBackProps> {
 			<Fragment>
 				<div className={navClass.join(" ")}>
 					<div className="container__form">
-						<Form type={"headerForm"} />
+						<div className="callBackPhoneTitle">Телефон:</div>
+						<a href="tel:+79282600165" className="callBackPhone">
+							+7 (928) 260-01-65
+						</a>
+						<div className="callBackEmailTitle">Почта:</div>
+						<a href="mailto:glavdomop@gmail.com" className="callBackEmail">
+							glavdomop@gmail.com
+						</a>
 					</div>
 				</div>
 				<Button
@@ -43,10 +50,9 @@ class CallBack extends Component<CallBackProps> {
 					}}
 					title="Оставить заявку"
 					id="application"
-					onclick="yaCounter62082124.reachGoal('application');ga('send','event','button','application');"
 				>
 					<span className={this.props.active ? "icon__burger nav active" : "icon__burger nav"} />
-					Оставить заявку
+					Связаться с нами
 				</Button>
 			</Fragment>
 		);

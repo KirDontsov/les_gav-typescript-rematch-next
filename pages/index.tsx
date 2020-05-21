@@ -69,7 +69,7 @@ const Home: FC<HomeProps> = props => {
 					<ThirdSectionMob slides={slideData} />
 					<FourthSectionMob />
 					<ThirdSectionCopyMob title="Внутренний вид помещений" slides={slideData} />
-					<FifthSectionMob />
+					{/* <FifthSectionMob /> */}
 					<SixthSectionMob />
 				</>
 			) : (
@@ -80,7 +80,7 @@ const Home: FC<HomeProps> = props => {
 					<ThirdSection slides={slideData} />
 					<FourthSection />
 					<ThirdSectionCopy title="Внутренний вид помещений" slides={slideData} />
-					<FifthSection />
+					{/* <FifthSection /> */}
 					<SixthSection />
 				</>
 			)}

@@ -281,3 +281,19 @@ a.logo__mob {
 		}
 	}
 }
+
+.container__form {
+	.callBackPhoneTitle,
+	.callBackEmailTitle {
+		font-size: 30px;
+		color: #fff;
+		margin: 10px 0 10px;
+	}
+
+	.callBackPhone,
+	.callBackEmail {
+		font-size: 40px;
+		margin: 10px 0 40px;
+		display: block;
+	}
+}
