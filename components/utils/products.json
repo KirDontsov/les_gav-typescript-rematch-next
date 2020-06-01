@@ -1,0 +1,159 @@
+[
+	{
+		"_id": "5ed4b8d335c0c2cb8b62e610",
+		"id": "1",
+		"name": "Spinach and Cheese",
+		"desc": "Ultra-thin pastry with light spinach, soft young cheese and cream cheese",
+		"price": "7,64",
+		"testo": {
+			"1": "Thin"
+		},
+		"diametr": {
+			"1": "35"
+		},
+		"weight": "550",
+		"numberOfPersons": "2-3",
+		"protein": "24,0",
+		"fat": "9,0",
+		"energy": "230,0/960,0",
+		"img": "c6ac6769d068cf8e34c5a507d850b79f.png"
+	},
+	{
+		"_id": "5ed4b93c35c0c2cb8b62e611",
+		"id": "2",
+		"name": "Favorite Carbonara",
+		"desc": "Classic favorite recipe: crispy bacon, cream cheese, juicy tomatoes, onions, Mozzarella, Italian herbs",
+		"price": "5,35",
+		"testo": {
+			"1": "Thin",
+			"2": "Traditional"
+		},
+		"diametr": {
+			"1": "20",
+			"2": "30"
+		},
+		"weight": "350",
+		"numberOfPersons": "1-2",
+		"protein": "11,0",
+		"fat": "8,0",
+		"energy": "260,0 / 1090,0",
+		"img": "2de43892e001217429a0d2d4e4614494.png"
+	},
+	{
+		"_id": "5ed4b97b35c0c2cb8b62e612",
+		"id": "3",
+		"name": "Strawberries and marshmallows",
+		"desc": "Sweet pizza with strawberries, air marshmallows, cream cheese, almond petals and chocolate",
+		"price": "7,01",
+		"testo": {
+			"1": "Thin"
+		},
+		"diametr": {
+			"1": "35"
+		},
+		"weight": "500",
+		"numberOfPersons": "1-2",
+		"protein": "7,0",
+		"fat": "5,0",
+		"energy": "300/1260",
+		"img": "3999bde2da8585a93f753f1583694558.png"
+	},
+	{
+		"_id": "5ed4b99535c0c2cb8b62e613",
+		"id": "4",
+		"name": "Currant",
+		"desc": "Mozzarella cheese, soft cream cheese, blackcurrant, condensed milk",
+		"price": "7,01",
+		"testo": {
+			"1": "Thin"
+		},
+		"diametr": {
+			"1": "35"
+		},
+		"weight": "550",
+		"numberOfPersons": "1-2",
+		"protein": "11,0",
+		"fat": "7,0",
+		"energy": "260/1090",
+		"img": "b860a4b8c6a364141177318d2432197e.png"
+	},
+	{
+		"_id": "5ed4b9d435c0c2cb8b62e614",
+		"id": "5",
+		"name": "Apples and cinnamon",
+		"desc": "Soft cheese “cream”, apples, almond petals, condensed milk, ground cinnamon",
+		"price": "7,50",
+		"testo": {
+			"1": "Thin"
+		},
+		"diametr": {
+			"1": "35"
+		},
+		"weight": "500",
+		"numberOfPersons": "1-2",
+		"protein": "7,0",
+		"fat": "5,0",
+		"energy": "250/1050",
+		"img": "af03c182bb8f61b6d3b37a0703e83e39.png"
+	},
+	{
+		"_id": "5ed4b9f335c0c2cb8b62e615",
+		"id": "6",
+		"name": "Chicken Blue Cheese",
+		"desc": "The perfect combination: tender chicken with slices of blue cheese, Parmeggiano sauce, a mixture of Italian cheeses and Mozzarella",
+		"price": "5,60",
+		"testo": {
+			"1": "Thin",
+			"2": "Traditional"
+		},
+		"diametr": {
+			"1": "30"
+		},
+		"weight": "320",
+		"numberOfPersons": "1-2",
+		"protein": "13,0",
+		"fat": "13,0",
+		"energy": "310/1300",
+		"img": "2d76eaf144704103e9c3c8a231844a1c.png"
+	},
+	{
+		"_id": "5ed4ba0435c0c2cb8b62e616",
+		"id": "7",
+		"name": "9 Cheeses",
+		"desc": "New taste! Cheese combination: Mozzarella, soft young cheese, a mixture of smoked Italian cheeses, blue cheese, Reggiano, Cheddar with Parmeggiano and oregano sauce",
+		"price": "6,11",
+		"testo": {
+			"1": "Thin",
+			"2": "Traditional"
+		},
+		"diametr": {
+			"1": "30"
+		},
+		"weight": "320",
+		"numberOfPersons": "1-2",
+		"protein": "15,0",
+		"fat": "15,0",
+		"energy": "340/1420",
+		"img": "c1344747948b7768d9c40820a067d7ae.png"
+	},
+	{
+		"_id": "5ed4ba1235c0c2cb8b62e617",
+		"id": "8",
+		"name": "Papa Mix",
+		"desc": "Four favorite pizzas in one: Pepperoni, Barbecue Chicken, Four Cheeses, Margarita",
+		"price": "10,07",
+		"testo": {
+			"1": "Thin",
+			"2": "Traditional"
+		},
+		"diametr": {
+			"1": "35"
+		},
+		"weight": "850",
+		"numberOfPersons": "2-3",
+		"protein": "13,0",
+		"fat": "10,0",
+		"energy": "280/1170",
+		"img": "9b970f85e111199882b3d116cfce614e.png"
+	}
+]
