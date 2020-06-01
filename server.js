@@ -2,6 +2,8 @@ const express = require("express");
 const next = require("next");
 const bodyParser = require("body-parser");
 
+var cors = require("cors");
+
 const dev = process.env.NODE_ENV !== "production";
 const prod = process.env.NODE_ENV === "production";
 const app = next({ prod });
@@ -28,7 +30,7 @@ app.prepare().then(() => {
 			});
 	});
 
-	server.get("*", (req, res) => {
+	server.get("*", cors(), (req, res) => {
 		return handle(req, res);
 	});
 
